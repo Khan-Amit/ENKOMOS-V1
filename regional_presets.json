@@ -1,0 +1,162 @@
+{
+  "_description": "ENKOMOS Regional Presets - Climate profiles for different global regions",
+  "_version": "1.0.0",
+  "_last_updated": "2026-01-15",
+  "_instructions": "Select the preset closest to your location. User can add, modify, or delete any region.",
+  
+  "temperate_coastal": {
+    "name": "Temperate Coastal",
+    "example_location": "Portugal (Estela), Spain, California, Chile",
+    "base_temp_c": 15,
+    "temp_seasonal_variation_c": 8,
+    "humidity_baseline_percent": 70,
+    "humidity_seasonal_variation_percent": 15,
+    "light_hours_winter": 9,
+    "light_hours_summer": 15,
+    "frost_risk": "low",
+    "wind_exposure": "moderate",
+    "heating_priority": "low",
+    "cooling_priority": "low",
+    "dehumidification_priority": "medium",
+    "notes": "Ideal for Estela, Portugal. Mild winters, moderate summers."
+  },
+  
+  "mediterranean": {
+    "name": "Mediterranean",
+    "example_location": "Italy, Greece, Southern Spain, Morocco",
+    "base_temp_c": 18,
+    "temp_seasonal_variation_c": 12,
+    "humidity_baseline_percent": 60,
+    "humidity_seasonal_variation_percent": 20,
+    "light_hours_winter": 10,
+    "light_hours_summer": 14,
+    "frost_risk": "very_low",
+    "wind_exposure": "low_to_moderate",
+    "heating_priority": "low",
+    "cooling_priority": "medium",
+    "dehumidification_priority": "medium",
+    "notes": "Hot dry summers, mild wet winters."
+  },
+  
+  "tropical": {
+    "name": "Tropical",
+    "example_location": "Brazil, Thailand, Indonesia, Nigeria",
+    "base_temp_c": 26,
+    "temp_seasonal_variation_c": 3,
+    "humidity_baseline_percent": 80,
+    "humidity_seasonal_variation_percent": 10,
+    "light_hours_winter": 12,
+    "light_hours_summer": 13,
+    "frost_risk": "none",
+    "wind_exposure": "low",
+    "heating_priority": "none",
+    "cooling_priority": "high",
+    "dehumidification_priority": "high",
+    "notes": "Year-round warm, high humidity. Focus on cooling and dehumidification."
+  },
+  
+  "arid_desert": {
+    "name": "Arid Desert",
+    "example_location": "UAE, Arizona, Sahara, Australia Outback",
+    "base_temp_c": 28,
+    "temp_seasonal_variation_c": 18,
+    "humidity_baseline_percent": 30,
+    "humidity_seasonal_variation_percent": 15,
+    "light_hours_winter": 10,
+    "light_hours_summer": 14,
+    "frost_risk": "low",
+    "wind_exposure": "high",
+    "heating_priority": "low",
+    "cooling_priority": "very_high",
+    "dehumidification_priority": "none",
+    "notes": "Extreme heat, low humidity. Requires evaporative cooling and shade."
+  },
+  
+  "cold_continental": {
+    "name": "Cold Continental",
+    "example_location": "Canada, Russia, Scandinavia, Northern China",
+    "base_temp_c": 5,
+    "temp_seasonal_variation_c": 25,
+    "humidity_baseline_percent": 65,
+    "humidity_seasonal_variation_percent": 20,
+    "light_hours_winter": 6,
+    "light_hours_summer": 16,
+    "frost_risk": "high",
+    "wind_exposure": "moderate",
+    "heating_priority": "very_high",
+    "cooling_priority": "low",
+    "dehumidification_priority": "low",
+    "notes": "Cold winters, warm summers. Heavy heating needed. Supplemental lighting in winter."
+  },
+  
+  "humid_subtropical": {
+    "name": "Humid Subtropical",
+    "example_location": "Florida, Southern China, India, Japan",
+    "base_temp_c": 20,
+    "temp_seasonal_variation_c": 15,
+    "humidity_baseline_percent": 75,
+    "humidity_seasonal_variation_percent": 15,
+    "light_hours_winter": 10,
+    "light_hours_summer": 14,
+    "frost_risk": "low",
+    "wind_exposure": "moderate",
+    "heating_priority": "low",
+    "cooling_priority": "high",
+    "dehumidification_priority": "high",
+    "notes": "Hot humid summers, mild winters. Manage humidity and mold."
+  },
+  
+  "highland_alpine": {
+    "name": "Highland Alpine",
+    "example_location": "Andes, Himalayas, Ethiopian Highlands, Alps",
+    "base_temp_c": 10,
+    "temp_seasonal_variation_c": 10,
+    "humidity_baseline_percent": 60,
+    "humidity_seasonal_variation_percent": 15,
+    "light_hours_winter": 8,
+    "light_hours_summer": 14,
+    "frost_risk": "high",
+    "wind_exposure": "high",
+    "heating_priority": "high",
+    "cooling_priority": "low",
+    "dehumidification_priority": "low",
+    "notes": "Cool year-round, high UV. Night frost possible any season."
+  },
+  
+  "oceanic_island": {
+    "name": "Oceanic Island",
+    "example_location": "Hawaii, Azores, Canary Islands, Maldives",
+    "base_temp_c": 22,
+    "temp_seasonal_variation_c": 5,
+    "humidity_baseline_percent": 75,
+    "humidity_seasonal_variation_percent": 10,
+    "light_hours_winter": 11,
+    "light_hours_summer": 13,
+    "frost_risk": "none",
+    "wind_exposure": "high",
+    "heating_priority": "none",
+    "cooling_priority": "medium",
+    "dehumidification_priority": "medium",
+    "notes": "Stable temperatures, high humidity. Manage salt spray if coastal."
+  },
+  
+  "_user_custom_regions": {
+    "_instructions": "Add your own regional presets below. Copy the structure of any existing region.",
+    "_example_custom_region": {
+      "name": "My Valley",
+      "example_location": "Local area",
+      "base_temp_c": 18,
+      "temp_seasonal_variation_c": 10,
+      "humidity_baseline_percent": 65,
+      "humidity_seasonal_variation_percent": 20,
+      "light_hours_winter": 9,
+      "light_hours_summer": 15,
+      "frost_risk": "moderate",
+      "wind_exposure": "low",
+      "heating_priority": "medium",
+      "cooling_priority": "medium",
+      "dehumidification_priority": "medium",
+      "notes": "User defined - adjust values to match your location"
+    }
+  }
+}
