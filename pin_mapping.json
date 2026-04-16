@@ -1,0 +1,378 @@
+{
+  "_description": "ENKOMOS Hardware Pin Mapping - GPIO, Modbus, I2C, and Serial device addresses",
+  "_version": "1.0.0",
+  "_last_updated": "2026-01-15",
+  "_instructions": "Edit this file to match your actual hardware wiring. All values are examples.",
+  "_hardware_platform": "Raspberry Pi 5 (or compatible)",
+  
+  "gpio_actuators": {
+    "_description": "GPIO pins for actuators (outputs)",
+    "_pin_mode": "OUTPUT",
+    "_voltage": "3.3V or 5V via relay",
+    
+    "mist_controller_main": {
+      "pin": 17,
+      "description": "Main mist pump relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "mist_zone_1": {
+      "pin": 18,
+      "description": "Zone 1 mist valve",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "mist_zone_2": {
+      "pin": 19,
+      "description": "Zone 2 mist valve",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "mist_zone_3": {
+      "pin": 20,
+      "description": "Zone 3 mist valve",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "mist_zone_4": {
+      "pin": 21,
+      "description": "Zone 4 mist valve",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "mist_zone_5": {
+      "pin": 22,
+      "description": "Zone 5 mist valve",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "mist_zone_6": {
+      "pin": 23,
+      "description": "Zone 6 mist valve",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    
+    "ir_heater_zone_1": {
+      "pin": 24,
+      "description": "Zone 1 IR heater relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "ir_heater_zone_2": {
+      "pin": 25,
+      "description": "Zone 2 IR heater relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "ir_heater_zone_3": {
+      "pin": 26,
+      "description": "Zone 3 IR heater relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "ir_heater_zone_4": {
+      "pin": 27,
+      "description": "Zone 4 IR heater relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "ir_heater_zone_5": {
+      "pin": 22,
+      "description": "Zone 5 IR heater relay (shared with mist)",
+      "default_state": "OFF",
+      "active_high": true,
+      "note": "Cannot use same pin as mist_zone_5 - adjust"
+    },
+    "ir_heater_zone_6": {
+      "pin": 23,
+      "description": "Zone 6 IR heater relay (shared with mist)",
+      "default_state": "OFF",
+      "active_high": true,
+      "note": "Cannot use same pin as mist_zone_6 - adjust"
+    },
+    
+    "humidity_fogger": {
+      "pin": 5,
+      "description": "Main humidifier/fogger relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "dehumidifier": {
+      "pin": 6,
+      "description": "Dehumidifier relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "exhaust_fan": {
+      "pin": 13,
+      "description": "Main exhaust fan relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    
+    "co2_injector": {
+      "pin": 16,
+      "description": "CO2 injection solenoid",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    
+    "led_lights_main": {
+      "pin": 12,
+      "description": "Main LED grow light relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "led_lights_supplemental": {
+      "pin": 7,
+      "description": "Supplemental LED relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    
+    "airflow_fan_array": {
+      "pin": 8,
+      "description": "Circulation fans relay",
+      "default_state": "ON",
+      "active_high": true,
+      "note": "Usually left on for air movement"
+    },
+    
+    "structured_water_valve": {
+      "pin": 9,
+      "description": "Structured water bypass valve",
+      "default_state": "CLOSED",
+      "active_high": true
+    },
+    "structured_water_activator": {
+      "pin": 10,
+      "description": "Vortex/magnetic/electrolytic activator",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    
+    "water_pump_fish_tub": {
+      "pin": 11,
+      "description": "Fish tub circulation pump",
+      "default_state": "ON",
+      "active_high": true
+    },
+    "water_pump_irrigation": {
+      "pin": 14,
+      "description": "Irrigation pump relay",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    "auto_feeder": {
+      "pin": 15,
+      "description": "Fish auto-feeder motor",
+      "default_state": "OFF",
+      "active_high": true
+    },
+    
+    "emergency_stop": {
+      "pin": 4,
+      "description": "Emergency stop button input",
+      "pull_up_down": "PULL_UP",
+      "active_low": true
+    }
+  },
+  
+  "sensor_buses": {
+    "_description": "Sensor communication buses and addresses",
+    
+    "i2c": {
+      "bus": 1,
+      "devices": {
+        "sht30_temp_humidity_indoor": {
+          "address": "0x44",
+          "description": "Indoor temperature/humidity sensor"
+        },
+        "sht30_temp_humidity_outdoor": {
+          "address": "0x45",
+          "description": "Outdoor temperature/humidity sensor"
+        },
+        "bmp280_pressure": {
+          "address": "0x76",
+          "description": "Barometric pressure sensor"
+        },
+        "veml7700_light": {
+          "address": "0x10",
+          "description": "Ambient light sensor (lux)"
+        }
+      }
+    },
+    
+    "modbus_rtu": {
+      "serial_port": "/dev/ttyUSB0",
+      "baudrate": 9600,
+      "parity": "N",
+      "stopbits": 1,
+      "timeout_seconds": 1,
+      "devices": {
+        "soil_sensor_zone_1": {
+          "address": 1,
+          "description": "Soil pH, NPK, moisture - Zone 1"
+        },
+        "soil_sensor_zone_2": {
+          "address": 2,
+          "description": "Soil pH, NPK, moisture - Zone 2"
+        },
+        "soil_sensor_zone_3": {
+          "address": 3,
+          "description": "Soil pH, NPK, moisture - Zone 3"
+        },
+        "soil_sensor_zone_4": {
+          "address": 4,
+          "description": "Soil pH, NPK, moisture - Zone 4"
+        },
+        "soil_sensor_zone_5": {
+          "address": 5,
+          "description": "Soil pH, NPK, moisture - Zone 5"
+        },
+        "soil_sensor_zone_6": {
+          "address": 6,
+          "description": "Soil pH, NPK, moisture - Zone 6"
+        },
+        "water_quality_sensor": {
+          "address": 10,
+          "description": "ORP, pH, DO, EC, temp - Main water line"
+        },
+        "fish_tub_sensor": {
+          "address": 11,
+          "description": "Fish tub: temp, pH, ammonia, nitrite, nitrate"
+        },
+        "ac_frequency_sensor": {
+          "address": 12,
+          "description": "AC line frequency monitor"
+        },
+        "energy_meter": {
+          "address": 13,
+          "description": "Solar/wind/battery/load power meter"
+        }
+      }
+    },
+    
+    "analog_inputs": {
+      "_description": "ADC channels (e.g., ADS1115 or MCP3008)",
+      "adc_device": "/dev/i2c-1",
+      "adc_address": "0x48",
+      "channels": {
+        "light_sensor_zone_1": {
+          "channel": 0,
+          "description": "Photosynthetically Active Radiation (PAR)"
+        },
+        "light_sensor_zone_2": {
+          "channel": 1,
+          "description": "PAR sensor Zone 2"
+        },
+        "light_sensor_zone_3": {
+          "channel": 2,
+          "description": "PAR sensor Zone 3"
+        },
+        "light_sensor_zone_4": {
+          "channel": 3,
+          "description": "PAR sensor Zone 4"
+        },
+        "light_sensor_zone_5": {
+          "channel": 4,
+          "description": "PAR sensor Zone 5"
+        },
+        "light_sensor_zone_6": {
+          "channel": 5,
+          "description": "PAR sensor Zone 6"
+        },
+        "water_level_fish_tub": {
+          "channel": 6,
+          "description": "Fish tub water level (0-100%)"
+        },
+        "water_level_tank": {
+          "channel": 7,
+          "description": "Main water tank level"
+        }
+      }
+    },
+    
+    "one_wire": {
+      "bus": "/sys/bus/w1/devices",
+      "devices": {
+        "soil_temp_zone_1": {
+          "id": "28-000012345678",
+          "description": "Soil temperature Zone 1"
+        },
+        "soil_temp_zone_2": {
+          "id": "28-000012345679",
+          "description": "Soil temperature Zone 2"
+        },
+        "compost_temp_sensor": {
+          "id": "28-000012345680",
+          "description": "Compost pile temperature"
+        }
+      }
+    },
+    
+    "weather_station": {
+      "type": "serial",
+      "serial_port": "/dev/ttyUSB1",
+      "baudrate": 9600,
+      "protocol": "modbus",
+      "device_address": 1,
+      "measurements": [
+        "wind_speed_ms",
+        "wind_direction_deg",
+        "rainfall_mm",
+        "solar_radiation_w_m2",
+        "outdoor_temp_c",
+        "outdoor_humidity_percent"
+      ]
+    }
+  },
+  
+  "vfd_controls": {
+    "_description": "Variable Frequency Drive settings for AC frequency experiments",
+    "enabled": false,
+    "serial_port": "/dev/ttyUSB2",
+    "baudrate": 9600,
+    "protocol": "modbus",
+    "device_address": 1,
+    "frequency_range_hz": [45, 50, 55, 60],
+    "controlled_device": "airflow_fan",
+    "parameters": {
+      "frequency_register": 0x2000,
+      "run_register": 0x2001,
+      "status_register": 0x2100
+    },
+    "safety": {
+      "max_frequency_hz": 65,
+      "min_frequency_hz": 40,
+      "ramp_up_seconds": 5,
+      "ramp_down_seconds": 5
+    }
+  },
+  
+  "relay_board": {
+    "_description": "Relay board configuration (if using multi-channel relay)",
+    "type": "8_channel_optocoupler",
+    "active_state": "LOW",
+    "channel_mapping": {
+      "ch1": "mist_controller_main",
+      "ch2": "ir_heater_zone_1",
+      "ch3": "humidity_fogger",
+      "ch4": "exhaust_fan",
+      "ch5": "co2_injector",
+      "ch6": "led_lights_main",
+      "ch7": "water_pump_irrigation",
+      "ch8": "airflow_fan_array"
+    }
+  },
+  
+  "_user_custom_pins": {
+    "_instructions": "Add your own pin mappings below.",
+    "_example": {
+      "pin": 100,
+      "device": "custom_device",
+      "description": "User added device"
+    }
+  }
+}
